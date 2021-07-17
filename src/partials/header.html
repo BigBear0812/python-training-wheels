@@ -1,0 +1,24 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" route-href="route: home">Python Training Wheels</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li repeat.for="row of router.navigation | navFilterMainLinks"
+            class="nav-item ${row.settings.parent ? 'dropdown': ''} ${row.isActive || (row.settings.children && row.settings.childRoutes.indexOf(row.router.currentInstruction.config.route) >= 0)? 'active' : ''}">
+            <a if.bind="!row.settings.parent" href.bind="row.href" class="nav-link">${row.title}</a>
+            <a if.bind="row.settings.parent" href="javascript:void(0)" class="nav-link dropdown-toggle"
+              id="${row.config.name}DropdownMenuLinks"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${row.title}</a>
+            <div if.bind="row.settings.parent" class="dropdown-menu" aria-labelledby="${row.config.name}DropdownMenuLinks">
+              <a repeat.for="child of row.settings.children" class="dropdown-item" href.bind="child.href">${child.title}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
