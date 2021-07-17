@@ -1,0 +1,11 @@
+<template>
+  <h1>Hello World</h1>
+  <form class="mb-3" submit.delegate="submitName()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Enter Your Name</label>
+      <input type="text" class="form-control" id="name" value.bind="userName">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p>${output}</p>
+</template>

@@ -24,6 +24,13 @@ export class App {
         name: 'home',
         moduleId: PLATFORM.moduleName('pages/home/home'),
         title: 'Home'
+      },
+      {
+        route: 'HelloWorld',
+        name: 'hello-world',
+        moduleId: PLATFORM.moduleName('pages/hello-world/hello-world'),
+        title: 'Hello World',
+        nav: true
       }
     ]);
 
