@@ -11,7 +11,7 @@ def hello_world():
 @app.route('/api/ConvertFile', methods=['POST'])
 def file_converter():
     file = request.files.get("file")
-    return ""
+    return csv_to_json.convert(file)
 
 
 @app.route('/', defaults={'path': ''})
