@@ -1,4 +1,4 @@
-import {HttpClient} from 'aurelia-http-client';
+import {HttpClient} from 'aurelia-fetch-client';
 import {autoinject} from 'aurelia-framework';
 
 @autoinject
@@ -10,7 +10,14 @@ export class FileConverterService{
 
     formData.append("file", file);
 
-    return this.httpClient.post("/api/ConvertFile", formData)
+    return this.httpClient.fetch("/api/ConvertFile",
+    {
+      method: "Post",
+      body: formData,
+      headers: {
+        'Content-Type':'form-data'
+      }
+    })
       .then(response => {
         return response//.blob();
       });
