@@ -15,7 +15,10 @@ export class FileConverterService{
       method: "Post",
       body: formData,
       headers: {
-        'Content-Type':'form-data'
+        //'Content-Type':'form-data'
+        contentType: false,
+        cache: false,
+        processData: false,
       }
     })
       .then(response => {

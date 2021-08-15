@@ -10,7 +10,7 @@ def hello_world():
 
 @app.route('/api/ConvertFile', methods=['POST'])
 def file_converter():
-    file = request
+    file = request.files.get("file")
     return ""
 
 
