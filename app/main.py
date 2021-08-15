@@ -1,5 +1,6 @@
 from flask import Flask, request
 import re
+from csv_to_json import convert
 app = Flask(__name__, static_folder='../dist', static_url_path="/")
 
 
@@ -11,7 +12,7 @@ def hello_world():
 @app.route('/api/ConvertFile', methods=['POST'])
 def file_converter():
     file = request
-    return ""
+    return csv_to_json.convert(file)
 
 
 @app.route('/', defaults={'path': ''})
