@@ -8,6 +8,11 @@ def hello_world():
     name = request.get_data(True, True, False)
     return "Welcome " + str(name)
 
+@app.route('/api/ConvertFile', methods=['POST'])
+def file_converter():
+    file = request
+    return ""
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<string:path>')

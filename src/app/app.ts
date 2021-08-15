@@ -17,7 +17,7 @@ export class App {
     config.options.pushState = true;
     config.options.root = '/';
 
-    config.title = 'Home';
+    config.title = 'Python Training Wheels';
     config.map([
       {
         route: ['', 'index'],
@@ -30,6 +30,13 @@ export class App {
         name: 'hello-world',
         moduleId: PLATFORM.moduleName('pages/hello-world/hello-world'),
         title: 'Hello World',
+        nav: true
+      },
+      {
+        route: 'FileConverter',
+        name: 'file-converter',
+        moduleId: PLATFORM.moduleName('pages/file-converter/file-converter'),
+        title: 'File Converter',
         nav: true
       }
     ]);
