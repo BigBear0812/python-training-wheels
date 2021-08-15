@@ -5,17 +5,18 @@ import {autoinject} from 'aurelia-framework';
 export class FileConverterService{
   constructor(private httpClient: HttpClient){}
 
-  convertFile(file: File): Promise<File>{
+  convertFile(file: File){
     let formData = new FormData();
 
     formData.append("file", file);
 
-    return this.http.post("/api/ConvertFile", formData)
+    return this.httpClient.post("/api/ConvertFile", formData)
       .then(response => {
-        return response.file;
+        return response//.blob();
       });
-      then(file => {
-        return file;
-      })
+//       then(blob => {
+//         const objecturl = URL.createObjectURL(blob);
+//         return new File(objecturl);
+//       });
   }
 }

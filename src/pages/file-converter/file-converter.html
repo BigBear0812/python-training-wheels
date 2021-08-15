@@ -1,0 +1,13 @@
+<template>
+  <h1>File Converter</h1>
+  <form class="mb-3" submit.delegate="submitFile()">
+    <div id="formHelpBlock" class="form-text">
+      Upload your CSV format export file for conversion to JSON
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Select CSV file to be converted</label>
+      <input class="form-control" type="file" id="formFile" files.bind="selectedFiles">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</template>
