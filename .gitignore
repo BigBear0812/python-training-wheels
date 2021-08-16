@@ -171,3 +171,4 @@ node_modules
 /scripts
 /src/environment.ts
 /dist
+/app/tmp
